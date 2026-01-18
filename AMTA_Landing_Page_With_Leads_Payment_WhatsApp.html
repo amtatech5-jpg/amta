@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMTA | Affordable Website Development</title>
+<meta name="description" content="Affordable website development for small businesses by AMTA.">
+
+<style>
+:root {
+  --primary:#1e88e5;
+  --dark:#0f172a;
+  --light:#f8fafc;
+}
+*{box-sizing:border-box;font-family:Arial,sans-serif}
+body{margin:0;background:var(--light);color:var(--dark)}
+header{padding:80px 20px;text-align:center;background:linear-gradient(135deg,#e3f2fd,#fff)}
+h1{font-size:2.4rem}
+p{color:#475569}
+.btn{display:inline-block;margin:15px;padding:14px 32px;background:var(--primary);color:#fff;text-decoration:none;border-radius:30px;font-weight:bold}
+section{padding:60px 20px;max-width:1100px;margin:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+.card{background:#fff;padding:30px;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,.08);text-align:center}
+form{max-width:600px;margin:auto;background:#fff;padding:40px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.1)}
+input,select{width:100%;padding:14px;margin-bottom:15px;border-radius:10px;border:1px solid #cbd5f5}
+button{width:100%;padding:14px;border:none;border-radius:30px;background:var(--primary);color:#fff;font-size:1rem}
+.success{display:none;color:green;text-align:center;margin-top:10px}
+footer{background:#0f172a;color:#fff;text-align:center;padding:40px 20px}
+.whatsapp{
+ position:fixed;bottom:20px;right:20px;
+ background:#25D366;color:#fff;
+ padding:14px 18px;border-radius:50px;
+ text-decoration:none;font-weight:bold;
+ box-shadow:0 5px 20px rgba(0,0,0,.3)
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Build Your Business Website at an Affordable Price</h1>
+<p>AMTA helps businesses go online with professional, fast, and budget-friendly websites.</p>
+<a href="#contact" class="btn">Get Started</a>
+<a href="#payment" class="btn">Pay & Start</a>
+</header>
+
+<section>
+<h2 style="text-align:center">Our Services</h2>
+<div class="grid">
+<div class="card">Business Website Development</div>
+<div class="card">Landing Pages</div>
+<div class="card">E-commerce Websites</div>
+<div class="card">Website Redesign</div>
+<div class="card">SEO-Friendly & Mobile Responsive Websites</div>
+</div>
+</section>
+
+<section>
+<h2 style="text-align:center">Why Choose AMTA</h2>
+<div class="grid">
+<div class="card">Affordable Pricing</div>
+<div class="card">Fast Delivery</div>
+<div class="card">Modern UI/UX</div>
+<div class="card">Mobile Responsive</div>
+<div class="card">Free Consultation</div>
+</div>
+</section>
+
+<section id="contact">
+<h2 style="text-align:center">Start Your Project</h2>
+<form id="leadForm">
+<input required placeholder="Full Name">
+<input required placeholder="Business Name">
+<input required type="email" placeholder="Email Address">
+<input required placeholder="Phone Number">
+
+<select required>
+<option value="">Service Required</option>
+<option>Business Website</option>
+<option>Landing Page</option>
+<option>E-commerce</option>
+<option>Redesign</option>
+</select>
+
+
+<button type="submit">Submit</button>
+<div class="success">✅ Thank you! We will contact you shortly.</div>
+</form>
+</section>
+
+
+
+<footer>
+<h3>AMTA</h3>
+<p>Affordable Web Solutions for Every Business</p>
+<p>Email: contact@amta.com</p>
+</footer>
+
+<a class="whatsapp" 
+href="https://wa.me/91800869030?text=Hi%20AMTA,%20I%20need%20a%20website"
+target="_blank">WhatsApp</a>
+
+<script>
+const form = document.getElementById("leadForm");
+const success = document.querySelector(".success");
+
+form.addEventListener("submit", async e => {
+ e.preventDefault();
+ const data = {
+   name: form[0].value,
+   business: form[1].value,
+   email: form[2].value,
+   phone: form[3].value,
+   service: form[4].value,
+ };
+
+ await fetch("PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE", {
+   method:"POST",
+   body:JSON.stringify(data)
+ });
+
+ form.reset();
+ success.style.display="block";
+});
+</script>
+
+</body>
+</html>
